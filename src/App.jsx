@@ -20,7 +20,7 @@ function App() {
     // Check if the question is already in history
     if (!history.find(item => item.question === questionText)) {
       const response = await axios({
-        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAkzLsNFrzaeMj2IJaDH6Bp1444-FQGxnokar",
+        url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAkzLsNFrzaeMj2IJaDH6Bp1444-FQGxno",
         method: "post",
         data: {
           contents: [{ parts: [{ text: questionText }] }],
