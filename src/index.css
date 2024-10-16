@@ -216,49 +216,7 @@ color: white;
 #main.shifted {
   margin-left: 190px;
 }
-/* Styling for the main container */
-#main {
-  padding: 20px;
-  margin-left: 250px;
-}
-
-/* Container for question and answer box */
-.question-answer-container {
-  display: flex;
-  flex-direction: column; /* Vertically stack question and answer */
-  gap: 15px; /* Add space between textarea, button, and answer */
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-}
-
-/* Responsive textarea styling */
-textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  resize: none;
-  box-sizing: border-box;
-}
-
-/* Button styling */
-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Answer container styling */
+/* Answer container styling - open vertically and responsive */
 #answer-container {
   background-color: #f9f9f9;
   padding: 15px;
@@ -269,65 +227,9 @@ button:hover {
   white-space: pre-wrap; /* Preserve white spaces and line breaks */
   font-family: 'Courier New', Courier, monospace; /* Code-like style */
   font-size: 1rem;
-}
-
-/* For responsive behavior */
-@media (max-width: 768px) {
-  #main {
-    margin-left: 0;
-  }
-
-  .question-answer-container {
-    width: 90%;
-  }
-}
-
-/* Additional styles for sidebar and history */
-.sidebar.open {
-  width: 250px;
-}
-
-.shifted {
-  margin-left: 250px;
-}
-
-.history-container {
-  max-height: 300px;
-  overflow-y: auto;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-#historycut {
-  background: none;
-  border: none;
-  color: red;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
-/* Sidebar close button */
-.closebtn {
-  padding: 10px;
-  background-color: red;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.newchatbtn {
-  padding: 10px;
-  background-color: green;
-  color: white;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 20px;
+  display: block; /* Ensures that it opens vertically */
+  width: 100%; /* Full width for responsiveness */
+  max-width: 100%; /* Makes sure it doesn't exceed the container width */
+  overflow-y: auto; /* Add scrolling if the content exceeds the height */
+  box-sizing: border-box; /* Ensure padding is included in the element's width/height */
 }
