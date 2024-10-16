@@ -1,3 +1,221 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.5em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 5px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  background: none;
+  border: none;
+  color: #818181;
+}
+
+.sidebar .closebtn:hover {
+  color: #f1f1f1;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+#main>h1{
+  margin: 5px;
+}
+
+#main>textarea{
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+#answer-container>pre{
+  color: black;
+  font-size: 15px;
+}
+.newchatbtn {
+  margin: 0px 0px 5px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  text-align: center;
+}
+
+.newchatbtn:hover {
+  background-color: #45a049;
+}
+
+#historycut{
+  position: absolute;
+    right: 25px;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    padding: 0px 0;
+    margin: -1px 0;
+}
+#mySidebar>ul{
+  font-size: 15px;
+  text-align: justify;
+}
+.sidebar .history-container {
+  position: relative;
+  white-space: nowrap;
+  overflow-y: auto;
+  flex-grow: 1;
+  max-height: calc(100% - 200px); /* Adjust this value as needed */
+}
+
+.history-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history-container li {
+  padding: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#mySidebar>h3 , ul>li{
+color: white;
+}
+#answer-container {
+  margin-top: 10px;
+  overflow-y: auto;
+  background-color: #f9f9f9;
+}
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+#main.shifted {
+  margin-left: 190px;
+}
 /* Styling for the main container */
 #main {
   padding: 20px;
@@ -53,7 +271,7 @@ button:hover {
   font-size: 1rem;
 }
 
-/* Responsive behavior for smaller screens */
+/* For responsive behavior */
 @media (max-width: 768px) {
   #main {
     margin-left: 0;
@@ -64,7 +282,7 @@ button:hover {
   }
 }
 
-/* Sidebar and history section */
+/* Additional styles for sidebar and history */
 .sidebar.open {
   width: 250px;
 }
@@ -88,7 +306,6 @@ ul li {
   cursor: pointer;
 }
 
-/* Close button in the history items */
 #historycut {
   background: none;
   border: none;
@@ -106,7 +323,6 @@ ul li {
   cursor: pointer;
 }
 
-/* New chat button styling */
 .newchatbtn {
   padding: 10px;
   background-color: green;
@@ -114,40 +330,4 @@ ul li {
   border: none;
   cursor: pointer;
   margin-bottom: 20px;
-}
-
-/* Open sidebar button */
-.openbtn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.openbtn:hover {
-  background-color: #0056b3;
-}
-
-/* Article section styling */
-.article {
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.article h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.article p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 10px;
 }
